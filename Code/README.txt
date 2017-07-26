@@ -1,0 +1,3 @@
+The Code folder has a very simple structure:
+- The backend folder contains all the files that have to do with the backend API as well as the database. Note, however, that since the project utilizes Docker there are no database files per se, except for the configuration files. Everytime Docker is run, the database and its files are created automatically.
+- The frontend folder contains all the files that have to do with the user interface (UI) of the system.
