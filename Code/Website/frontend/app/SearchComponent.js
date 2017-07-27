@@ -125,6 +125,7 @@ class SearchComponent extends React.Component {
           value={this.state.url}
           onChange={this.onChangeHandler.bind(this, 'url')}/>
         <Dropdown
+          name='algorithm'
           auto
           onChange={this.onChangeHandler.bind(this, 'summarizerType')}
           source={[{
@@ -141,7 +142,7 @@ class SearchComponent extends React.Component {
         />
 
         {this.props.isLoggedIn ? '' : (
-          <div style={{marginTop: '10px', marginBottom: '20px'}}>
+          <div id='loggedOutMessage' style={{marginTop: '10px', marginBottom: '20px'}}>
             <FontIcon
               value='announcement'
               style={{marginRight: '10px'}}/>
@@ -150,6 +151,7 @@ class SearchComponent extends React.Component {
           </div>
         )}
         <Button
+          id='summarize'
           icon='search'
           disabled={!this.props.isLoggedIn || this.state.summarizationProcessing}
           raised accent
@@ -157,7 +159,7 @@ class SearchComponent extends React.Component {
           {this.state.summarizationProcessing ? ('Processing') : ('Summarize')}
         </Button>
         {this.state.summarizationDone ? (
-          <span style={{marginLeft: '10px'}}>
+          <span id="summarizeMessage" style={{marginLeft: '10px'}}>
             {this.state.summarizationMessage}
           </span>
         ) : (
